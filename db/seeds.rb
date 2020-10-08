@@ -20,8 +20,8 @@ users = [
     users.each {|user| User.create(user)}
 
     coffee_shops = [
-        {lat: "Seattle",
-        lng: "Red",
+        {lat: 0,
+        lng: 0,
         name: "white", 
         address: "https://akns-images.eonline.com/eol_images/Entire_Site/2019027/rs_600x600-190127175953-600.2019-sag-awards-red-carpet-fashions-john-krasinsk.jpg?fit=around|1080:1080&output-quality=90&crop=1080:1080;center,top",
         zipcode: "85303",
@@ -52,10 +52,4 @@ users = [
 puts "seeds working!"
 
 
-# create_table :reviews do |t|
-#     t.integer :reviewed_coffee
-#     t.string :coffee_shop_id
-#     t.string :integer
-#     t.integer :user_id
-#     t.integer :rating
 
