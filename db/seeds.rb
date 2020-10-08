@@ -13,7 +13,6 @@ Review.destroy_all
 users = [
     {city: "Seattle",
     username: "Red",
-    password: "white", 
     img_url: "https://akns-images.eonline.com/eol_images/Entire_Site/2019027/rs_600x600-190127175953-600.2019-sag-awards-red-carpet-fashions-john-krasinsk.jpg?fit=around|1080:1080&output-quality=90&crop=1080:1080;center,top"}
     ]
 

@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2020_10_07_235729) do
   create_table "reviews", force: :cascade do |t|
     t.integer "reviewed_coffee"
     t.string "coffee_shop_id"
-    t.string "integer"
     t.integer "user_id"
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
@@ -48,7 +47,6 @@ ActiveRecord::Schema.define(version: 2020_10_07_235729) do
     t.string "city"
     t.string "img_url"
     t.string "username"
-    t.string "password"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
