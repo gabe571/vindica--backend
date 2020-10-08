@@ -3,7 +3,6 @@ class CreateReviews < ActiveRecord::Migration[6.0]
     create_table :reviews do |t|
       t.integer :reviewed_coffee
       t.string :coffee_shop_id
-      t.string :integer
       t.integer :user_id
       t.integer :rating
 
