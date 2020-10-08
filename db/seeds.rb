@@ -10,14 +10,7 @@ Review.destroy_all
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = [
-    {city: "Seattle",
-    username: "Red",
-    img_url: "https://akns-images.eonline.com/eol_images/Entire_Site/2019027/rs_600x600-190127175953-600.2019-sag-awards-red-carpet-fashions-john-krasinsk.jpg?fit=around|1080:1080&output-quality=90&crop=1080:1080;center,top"}
-    ]
-
-    users.each {|user| User.create(user)}
-
+gabriel = User.create(username:"gabriel", password:"123")
     coffee_shops = [
         {lat: 0,
         lng: 0,
