@@ -28,15 +28,15 @@ ActiveRecord::Schema.define(version: 2020_10_07_235729) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "coffee_shop_id"
     t.integer "user_id"
+    t.integer "coffee_shop_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "reviewed_coffee"
-    t.string "coffee_shop_id"
+    t.string "reviewed_coffee"
+    t.integer "coffee_shop_id"
     t.integer "user_id"
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
