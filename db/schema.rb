@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_10_07_235729) do
 
   create_table "reviews", force: :cascade do |t|
     t.string "reviewed_coffee"
+    t.string "coffee_shop_name"
+    t.string "user_username"
     t.integer "coffee_shop_id"
     t.integer "user_id"
     t.integer "rating"

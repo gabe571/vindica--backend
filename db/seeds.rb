@@ -24,7 +24,7 @@ favorites = [
 favorites.each {|favorite| Favorite.create(favorite)}
 
 reviews = [
-    {reviewed_coffee: "review content", coffee_shop_id: CoffeeShop.all.sample.id, user_id: User.all.sample.id,  rating: 5 }
+    {reviewed_coffee: "review content", coffee_shop_name: CoffeeShop.all.sample.name ,coffee_shop_id: CoffeeShop.all.sample.id, user_id: User.all.sample.id, user_username: User.all.sample.username, rating: 5 }
 ]
 reviews.each {|review| Review.create(review)}
 
