@@ -16,13 +16,7 @@ ActiveRecord::Schema.define(version: 2020_10_07_235729) do
   enable_extension "plpgsql"
 
   create_table "coffee_shops", force: :cascade do |t|
-    t.integer "lat"
-    t.integer "lng"
     t.string "name"
-    t.string "address"
-    t.integer "zipcode"
-    t.string "description"
-    t.string "photo"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

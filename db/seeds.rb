@@ -14,7 +14,7 @@ Review.destroy_all
 user = User.create( city: "Seattle", img_url:"https://bardbehavioralhealth.com/wp-content/uploads/2018/11/create-a-gravatar-beard.png", username:"Gabriel", password:"12345")
         
 coffee_shops = [
-    {lat: 1, lng: 2, name: "beans", address: "123 corner street", zipcode: 12345, description: "amazing coffee!!", photo:"https://bardbehavioralhealth.com/wp-content/uploads/2018/11/create-a-gravatar-beard.png" }
+    {name: "beans" }
 ]
 coffee_shops.each {|coffee_shops| CoffeeShop.create(coffee_shops)}
 
@@ -30,16 +30,5 @@ reviews.each {|review| Review.create(review)}
 
 puts "seeds working!"
 
-# class CreateReviews < ActiveRecord::Migration[6.0]
-#     def change
-#       create_table :reviews do |t|
-#         t.integer :reviewed_coffee
-#         t.string :coffee_shop_id
-#         t.integer :user_id
-#         t.integer :rating
-  
-#         t.timestamps
-#       end
-#     end
-#   end
+
   

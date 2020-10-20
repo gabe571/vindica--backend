@@ -10,7 +10,10 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        review = Review.create(review_params)
+        coffee_shop = CoffeeShop.find_or_create_by(name: params[:review][:coffee_shop_name])
+        review = Review.new(review_params)
+        review.coffee_shop_id = coffee_shop.id
+        review.save
         render json: review
     end
 
@@ -30,7 +33,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:user_id, :coffee_shop_id, :coffee_shop_name, :user_username, :reviewed_coffee, :rating, :id)
+        params.require(:review).permit(:user_id, :coffee_shop_id, :user_username, :reviewed_coffee, :rating, :coffee_shop_name)
     end
 end
 

@@ -30,7 +30,7 @@ class CoffeeShopsController < ApplicationController
         private
     
         def coffee_shop_params
-            params.require(:coffee_shop).permit(:lat, :lng, :name, :address, :zipcode, :description, :photo, :id)
+            params.require(:coffee_shop).permit(:name, :id)
         end
     end
 

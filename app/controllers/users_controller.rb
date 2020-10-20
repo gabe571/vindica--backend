@@ -22,6 +22,10 @@ class UsersController < ApplicationController
         
     end 
     
+    def index 
+        @user = User.all
+        render json: @user
+    end
     def persist
         token = encode_token({user_id: @user.id})
         render json: {user:UserSerializer.new(@user), token:token} 
