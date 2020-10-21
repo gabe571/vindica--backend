@@ -11,24 +11,24 @@ Review.destroy_all
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create( city: "Seattle", img_url:"https://bardbehavioralhealth.com/wp-content/uploads/2018/11/create-a-gravatar-beard.png", username:"Gabriel", password:"12345")
+# user = User.create( city: "Seattle", img_url:"https://bardbehavioralhealth.com/wp-content/uploads/2018/11/create-a-gravatar-beard.png", username:"Gabriel", password:"12345")
         
-coffee_shops = [
-    {name: "beans" }
-]
-coffee_shops.each {|coffee_shops| CoffeeShop.create(coffee_shops)}
+# coffee_shops = [
+#     {name: "beans" }
+# ]
+# coffee_shops.each {|coffee_shops| CoffeeShop.create(coffee_shops)}
 
-favorites = [
-    {user_id: User.all.sample.id, coffee_shop_id: CoffeeShop.all.sample.id}
-]
-favorites.each {|favorite| Favorite.create(favorite)}
+# favorites = [
+#     {user_id: User.all.sample.id, name: CoffeeShop.all.sample.name}
+# ]
+# favorites.each {|favorite| Favorite.create(favorite)}
 
-reviews = [
-    {reviewed_coffee: "review content", coffee_shop_name: CoffeeShop.all.sample.name ,coffee_shop_id: CoffeeShop.all.sample.id, user_id: User.all.sample.id, user_username: User.all.sample.username, rating: 5 }
-]
-reviews.each {|review| Review.create(review)}
+# reviews = [
+#     {reviewed_coffee: "review content", coffee_shop_name: CoffeeShop.all.sample.name ,coffee_shop_id: CoffeeShop.all.sample.id, user_id: User.all.sample.id, user_username: User.all.sample.username, rating: 5 }
+# ]
+# reviews.each {|review| Review.create(review)}
 
-puts "seeds working!"
+# puts "seeds working!"
 
 
   
