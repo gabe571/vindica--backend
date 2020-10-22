@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+    before_action :authorized, only:[:create]
     def index
         reviews = Review.all 
         render json: reviews
@@ -13,6 +14,7 @@ class ReviewsController < ApplicationController
         coffee_shop = CoffeeShop.find_or_create_by(name: params[:review][:coffee_shop_name])
         review = Review.new(review_params)
         review.coffee_shop_id = coffee_shop.id
+        review.user_id = @user.id
         review.save
         render json: review
     end

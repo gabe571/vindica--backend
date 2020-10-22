@@ -12,9 +12,11 @@ class FavoritesController < ApplicationController
 
     def create
         byebug
-        coffee_shop = CoffeeShop.find_or_create_by(:name => params[:coffee_shop_name])
+        coffee_shop = CoffeeShop.find_or_create_by(:name => params[:coffee_shop_name]) do |coffee_shop|
+            coffee_shop.image_url = params[:coffee_shop_image_url]
+            coffee_shop.phone = params[:coffee_shop_phone]
+        end
         favorite = Favorite.new
-        favorite.name = coffee_shop.name
         favorite.user_id = @user.id
         favorite.coffee_shop_id = coffee_shop.id
         favorite.save
@@ -37,7 +39,7 @@ class FavoritesController < ApplicationController
     private
 
     def favorite_params
-        params.require(:favorite).permit(:coffee_shop_id, :user_id)
+        params.require(:favorite).permit(:coffee_shop_id, :user_id, :coffee_shop_image_url)
     end
 end
 

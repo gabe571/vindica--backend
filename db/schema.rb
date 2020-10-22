@@ -17,12 +17,13 @@ ActiveRecord::Schema.define(version: 2020_10_07_235729) do
 
   create_table "coffee_shops", force: :cascade do |t|
     t.string "name"
+    t.string "image_url"
+    t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.string "name"
     t.integer "user_id"
     t.integer "coffee_shop_id"
     t.datetime "created_at", precision: 6, null: false
