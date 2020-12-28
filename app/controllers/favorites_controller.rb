@@ -1,6 +1,7 @@
 class FavoritesController < ApplicationController
     before_action :authorized, only:[:create]
     def index
+        favorites = Favorite.where(user_id: params[:user_id])
         favorites = Favorite.all 
         render json: favorites
     end
@@ -11,7 +12,6 @@ class FavoritesController < ApplicationController
     end
 
     def create
-        byebug
         coffee_shop = CoffeeShop.find_or_create_by(:name => params[:coffee_shop_name]) do |coffee_shop|
             coffee_shop.image_url = params[:coffee_shop_image_url]
             coffee_shop.phone = params[:coffee_shop_phone]
@@ -42,5 +42,3 @@ class FavoritesController < ApplicationController
         params.require(:favorite).permit(:coffee_shop_id, :user_id, :coffee_shop_image_url)
     end
 end
-
-

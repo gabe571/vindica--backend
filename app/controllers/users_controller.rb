@@ -5,7 +5,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
         if @user.valid?
             token = encode_token({user_id: @user.id})   
-            render json: @user
+            render json: {error: 'user created!'}
         else 
             render json: {error:'failed to create a user'}
         end

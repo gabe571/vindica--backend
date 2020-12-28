@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-  # before_action :authorized, only:[:create]
   def encode_token(payload)
       JWT.encode(payload, "coffee")
   end 

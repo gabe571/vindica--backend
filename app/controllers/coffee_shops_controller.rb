@@ -22,7 +22,7 @@ class CoffeeShopsController < ApplicationController
         end
     
         def destroy
-            guild = CoffeeShop.find(params[:id])
+            coffee_shop = CoffeeShop.find(params[:id])
             coffee_shop.destroy
             render json: {message: "Successfully removed coffee shop"}
         end
@@ -30,7 +30,7 @@ class CoffeeShopsController < ApplicationController
         private
     
         def coffee_shop_params
-            params.require(:coffee_shop).permit(:name, :image_url, :phone :id)
+            params.require(:coffee_shop).permit(:name,:phone, :id)
         end
     end
 
