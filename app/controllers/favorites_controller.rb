@@ -20,7 +20,7 @@ class FavoritesController < ApplicationController
         favorite.user_id = @user.id
         favorite.coffee_shop_id = coffee_shop.id
         favorite.save
-        render json: favorite
+        render json: {message: "Successfully Added to Favorites"}
     end
 
     def update
