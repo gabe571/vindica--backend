@@ -1,7 +1,7 @@
 class FavoritesController < ApplicationController
     before_action :authorized, only:[:create]
     def index
-        favorites = Favorite.where(user_id: params[:user_id])
+        favorites = Favorite.where(user: params[:user])
         favorites = Favorite.all 
         render json: favorites
     end
@@ -17,7 +17,7 @@ class FavoritesController < ApplicationController
             coffee_shop.phone = params[:coffee_shop_phone]
         end
         favorite = Favorite.new
-        favorite.user_id = @user.id
+        favorite.user = @user
         favorite.coffee_shop_id = coffee_shop.id
         favorite.save
         render json: {message: "Successfully Added to Favorites"}
@@ -33,7 +33,7 @@ class FavoritesController < ApplicationController
     def destroy
         favorite = Favorite.find_by(params[:coffee_shop_id])
         favorite.destroy
-        render json: {message: "Successfully removed favorite"}
+        render json: {message: "Successfully Removed from Favorites"}
     end
 
     private
