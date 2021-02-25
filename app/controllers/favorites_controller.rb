@@ -31,7 +31,7 @@ class FavoritesController < ApplicationController
     end
 
     def destroy
-        favorite = Favorite.find(params[:id])
+        favorite = Favorite.find_by(params[:coffee_shop_id])
         favorite.destroy
         render json: {message: "Successfully removed favorite"}
     end
