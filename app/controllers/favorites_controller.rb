@@ -1,7 +1,6 @@
 class FavoritesController < ApplicationController
     before_action :authorized, only:[:create]
     def index
-        favorites = Favorite.where(user: params[:user])
         favorites = Favorite.all 
         render json: favorites
     end
